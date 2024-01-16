@@ -1,11 +1,11 @@
 import { addContact } from '../../redux/contactsSlice';
 import css from '../Styles.module.css';
 import { useDispatch, useSelector } from 'react-redux';
-import { getContacts } from '../../redux/selectors';
+import { selectContacts } from '../../redux/selectors';
 
 export const ContactForm = () => {
     const dispatch = useDispatch();
-    const namesContacts = useSelector(getContacts).map(contact => contact.name);
+    const namesContacts = useSelector(selectContacts).map(contact => contact.name);
 
     const updateStateForAdd = (evt) => {
         evt.preventDefault();
