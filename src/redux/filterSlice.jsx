@@ -6,11 +6,11 @@ import storage from "redux-persist/lib/storage";
 
 const filterSlice = createSlice({
     name: 'filter',
-    initialState: {filter: ""},
+    initialState: "",
     reducers:{
         setFilter: {
             reducer (state, action){
-                    state.filter = action.payload;
+                    return action.payload;
                 },
             prepare (text) {
                 return{

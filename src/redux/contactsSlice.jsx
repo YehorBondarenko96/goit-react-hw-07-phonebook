@@ -2,20 +2,24 @@ import { createSlice, nanoid } from "@reduxjs/toolkit";
 import persistReducer from "redux-persist/es/persistReducer";
 import storage from "redux-persist/lib/storage";
 
-const contactsInitialState = [
-    {id: 'id-1', name: 'Rosie Simpson', number: '459-12-56'},
-    {id: 'id-2', name: 'Hermione Kline', number: '443-89-12'},
-    {id: 'id-3', name: 'Eden Clements', number: '645-17-79'},
-    {id: 'id-4', name: 'Annie Copeland', number: '227-91-26'},
-];
+const contactsInitialState = {
+    items: [
+        {id: 'id-1', name: 'Rosie Simpson', number: '459-12-56'},
+        {id: 'id-2', name: 'Hermione Kline', number: '443-89-12'},
+        {id: 'id-3', name: 'Eden Clements', number: '645-17-79'},
+        {id: 'id-4', name: 'Annie Copeland', number: '227-91-26'}
+    ],
+    isLoading: false,
+    error: null
+  };
 
 const contactsSlice = createSlice({
     name: 'contacts',
-    initialState: {contacts: contactsInitialState},
+    initialState: contactsInitialState,
     reducers: {
         addContact: {
             reducer (state, action){
-                state.contacts.push(action.payload);
+                state.items.push(action.payload);
             },
             prepare (name, number){
                 return {
@@ -28,9 +32,9 @@ const contactsSlice = createSlice({
             }
         },
         deleteContact (state, action){
-            const indexContact = state.contacts.findIndex(contact => String(contact.id) === action.payload);
+            const indexContact = state.items.findIndex(contact => String(contact.id) === action.payload);
             if (indexContact !== -1) {
-                state.contacts.splice(indexContact, 1);
+                state.items.splice(indexContact, 1);
             }
         }
     }
