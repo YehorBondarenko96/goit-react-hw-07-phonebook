@@ -7,7 +7,7 @@ const contactsInitialState = {
     error: null
     };
 
-const forPending = state => state.isLoading = true;
+const forPending = (state) => {state.isLoading = true};
 const forRejected = (state, action) => {
     state.isLoading = false;
     state.error = action.payload;
