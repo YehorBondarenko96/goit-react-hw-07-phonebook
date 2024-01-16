@@ -8,14 +8,3 @@ export const store = configureStore({
         filter: filterReducer
     }
 });
-
-// export const store = configureStore({
-//     reducer: {
-//         contacts: {
-//           items: contactsReducer,
-//           isLoading: false,
-//           error: null
-//         },
-//         filter: filterReducer
-//       }
-// });
