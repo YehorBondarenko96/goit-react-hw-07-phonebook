@@ -38,7 +38,7 @@ export const ContactList = () => {
                 }
                 </ul>
             )}
-            {error && <h2>Oopsss...Something went wrong...</h2>}
+            {error && contacts.length > 0 && <h2>Oopsss...Something went wrong...</h2>}
         </div>
     )
 }
