@@ -7,14 +7,13 @@ export const ItemContact = ({contact}) => {
 
     const updateStateForDelete = () => {
         const idContact = contact.id;
-        console.log('idContact: ', idContact);
         dispatch(deleteContact(idContact));
         };
 
     return(
         <li key={contact.id} className={css.itemContscts}>
                 <p className={css.pItemContactsName}>{contact.name}:</p> 
-                {/* <p className={css.pItemContactsNumber}>{contact.phone}</p> */}
+                <p className={css.pItemContactsNumber}>{contact.phone}</p>
                 <button id={contact.id} className={css.buttonDelete} type='button' onClick={updateStateForDelete}>
                     Delete
                 </button>
