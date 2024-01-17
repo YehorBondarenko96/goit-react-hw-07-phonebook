@@ -1,4 +1,4 @@
-import { addContact } from '../../redux/contactsSlice';
+import { addContact } from '../../redux/opertions';
 import css from '../Styles.module.css';
 import { useDispatch, useSelector } from 'react-redux';
 import { selectContacts } from '../../redux/selectors';
