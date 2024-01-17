@@ -35,6 +35,7 @@
 
 .listContacts{
     list-style-type: disc;
+    width: 100%;
 }
 
 .itemContscts{
@@ -43,11 +44,17 @@
     flex-direction: row;
     gap: 10px;
     align-items: center;
+    width: 100%;
 }
 
-.pItemContacts{
+.pItemContactsName{
     margin: 0;
     padding: 0;
+}
+
+.pItemContactsNumber{
+    padding: 0;
+    margin: 0 0 0 auto;
 }
 
 .itemContscts::before {
@@ -63,4 +70,5 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-left: 20px;
 }
