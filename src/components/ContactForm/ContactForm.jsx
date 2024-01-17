@@ -10,10 +10,10 @@ export const ContactForm = () => {
     const updateStateForAdd = (evt) => {
         evt.preventDefault();
         const newName = evt.currentTarget.elements.name.value;
-        const newNumb = evt.currentTarget.elements.number.value;
+        // const newNumb = evt.currentTarget.elements.number.value;
         
         if(!namesContacts.some(name => name.toLowerCase() === newName.toLowerCase())){
-            dispatch(addContact(newName, newNumb));
+            dispatch(addContact(newName));
             evt.currentTarget.reset();
         } else{
             alert(`${newName} is already in contacts.`)

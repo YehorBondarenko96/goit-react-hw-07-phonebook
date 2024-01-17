@@ -35,6 +35,7 @@ export const App = () => {
   <h2 className={css.contacts}>Contacts</h2>
   <Filter />
   <div className={css.divForContactList}>
+  {error && <h2>Oopsss...Something went wrong...</h2>}
   {isLoading && !error ? <Loader /> : <ContactList />}
   {error && <h2>Oopsss...Something went wrong...</h2>}
   </div>
